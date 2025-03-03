@@ -1,0 +1,39 @@
+﻿@model List<BooklyProjectNew.Entities.Author>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+<h3>Yazarlar</h3>
+
+<table class="table table-bordered tabl">
+    <tr>
+        <th>#</th>
+        <th>Yazar Adı</th>
+        <th>Yazar Soyadı</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+           
+            <td>@item.Name</td>
+            <td>@item.Surname</td>
+            <td><a href="/Authors/DeleteAuthor/@item.AuthorId" class="btn btn-outline-dark" style="color:#AB2087"><i class="fa fa-trash"></i>Sil</a></td>
+            <td><a href="/Authors/UpdateAuthor/@item.AuthorId" class="btn btn-outline-dark" style="color:#AB2087" ><i class="fa fa-pen"></i>Güncelle</a></td>
+        </tr>
+    }
+
+    <table>
+        <br />
+        <td><a href="/Authors/AddAuthor/" class="btn btn-outline-dark">Yeni Yazar Ekle</a></td>
+    </table>
+
+
+
+
+</table>

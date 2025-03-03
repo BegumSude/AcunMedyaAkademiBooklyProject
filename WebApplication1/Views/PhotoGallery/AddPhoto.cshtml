@@ -1,0 +1,14 @@
+﻿@model BooklyProjectNew.Entities.PhotoGallery
+@{
+    ViewBag.Title = "AddPhoto";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h3>Fotoğraf Ekleme Sayfası</h3>
+<form method="post">
+    <label>Fotoğraf Url</label>
+    <input type="text" name="ImageUrl" class="form-control" required/>
+    <br />
+    <button class="btn-outline-dark"><i class="fa fa-save"></i>Kaydet</button>
+</form>
+

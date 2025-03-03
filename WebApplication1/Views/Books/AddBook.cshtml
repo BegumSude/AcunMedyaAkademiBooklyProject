@@ -1,0 +1,23 @@
+﻿@model BooklyProjectNew.Entities.Book
+@{
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h3>Yeni Kitap Ekle</h3>
+
+<form method="post">
+    <label>Kapak Resmi</label>
+    <input type="text" name="CoverImageUrl" class="form-control" required />
+    <br />
+    <label>Kitap Adı</label>
+    <input type="text" name="BookName" class="form-control" required />
+    <br />
+    <label>Yazar Adı</label>
+    <input type="text" name="Author" class="form-control" required />
+    <br />
+    <label>Fiyat</label>
+    <input type="text" name="Price" class="form-control" required />
+    <br />
+    <button class="btn btn-outline-dark"><i class="fa fa-save"></i> Kaydet</button>
+</form>
+

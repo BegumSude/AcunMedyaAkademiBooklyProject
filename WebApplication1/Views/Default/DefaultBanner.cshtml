@@ -1,0 +1,48 @@
+﻿@model List<BooklyProjectNew.Entities.Banner>
+
+<section id="banner" class="position-relative d-flex align-items-center py-5 bg-light-gray"
+         style="background-image: url('/Templates/Bookly/images/banner-image-bg-1.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 50px 0;">
+
+    <!-- Sağ ve Sol Oklar -->
+    <div class="position-absolute end-0 pe-0 pe-xxl-5 me-0 me-xxl-5 swiper-next main-slider-button-next">
+        <svg class="chevron-forward-circle d-flex justify-content-center align-items-center p-2" width="80" height="80">
+            <use xlink:href="#alt-arrow-right-outline"></use>
+        </svg>
+    </div>
+    <div class="position-absolute start-0 ps-0 ps-xxl-5 ms-0 ms-xxl-5 swiper-prev main-slider-button-prev">
+        <svg class="chevron-back-circle d-flex justify-content-center align-items-center p-2" width="80" height="80">
+            <use xlink:href="#alt-arrow-left-outline"></use>
+        </svg>
+    </div>
+
+    <!-- Swiper Container -->
+    <div class="swiper main-swiper">
+        <div class="swiper-wrapper">
+            @foreach (var item in Model)
+            {
+                <div class="swiper-slide">
+                    <div class="container">
+                        <div class="row d-flex flex-column-reverse flex-md-row align-items-center">
+                            <div class="col-md-5 offset-md-1 mt-5 mt-md-0 text-center text-md-start">
+                                <div class="banner-content">
+                                    <h2>@item.Title</h2>
+                                    <p>@item.Description</p>
+                                    <a href="#book" class="btn">Satın Almak İçin</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6 text-center">
+                                <div class="image-holder">
+                                    <img src="@item.ImageUrl" style="width:500px;height:500px" class="img-fluid" alt="banner">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <!-- Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+</section>

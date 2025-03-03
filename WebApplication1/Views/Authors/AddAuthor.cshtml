@@ -1,0 +1,19 @@
+﻿@model List<BooklyProjectNew.Entities.Author>
+    @{
+        ViewBag.Title = "AddAuthor";
+        Layout = "~/Views/AdminLayout/Index.cshtml";
+    }
+
+    <h3>Yeni Yazar Ekle</h3>
+
+    <form method="post">
+        <label>Yazar Adı</label>
+        <input type="text" name="Name" class="form-control" required />
+        <br />
+        <label>Yazar Soyadı</label>
+        <input type="text" name="Surname" class="form-control" required />
+        <br />
+        <button class="btn btn-outline-dark"><i class="fa fa-save"></i> Kaydet</button>
+    </form>
+
+

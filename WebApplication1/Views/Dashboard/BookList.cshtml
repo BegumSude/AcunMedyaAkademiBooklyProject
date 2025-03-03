@@ -1,0 +1,60 @@
+﻿@model List<BooklyProjectNew.Entities.Book>
+
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        Kitaplar
+    </div>
+    <div class="card-body">
+        <table id="datatablesSimple">
+            <thead>
+                <tr>
+
+                    <th>Kitap Kapağı</th>
+                    <th>Yazar Adı</th>
+                    <th>Kitap Adı</th>
+                    <th>Fiyatı</th>
+                    <th>Kategori</th>
+                    <th>İndirim Durumu</th>
+
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>Kitap Kapağı</th>
+                    <th>Yazar Adı</th>
+                    <th>Kitap Adı</th>
+                    <th>Fiyatı</th>
+                    <th>Kategori</th>
+                    <th>İndirim Durumu</th>
+                </tr>
+            </tfoot>
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td><img src="@item.CoverImageUrl" style="width:100px;height:100px" /></td>
+                        <td>@item.Author.Name @item.Author.Surname</td>
+                        <td>@item.BookName</td>
+                        <td>@item.Price</td>
+
+                        <td>
+                            @foreach(var category in item.BookCategories)
+                        {
+                            <span class="badge bg-gradient" style="color:#AB2087; border: 1px solid gray; padding: 5px; border-radius: 5px;">@category.Category.CategoryName</span><br />
+                        }
+                            </td> 
+
+
+                        <td><span class="badge bg-gradient" style="color:#AB2087; border: 1px solid gray; padding: 5px; border-radius: 5px;">@(item.IsOnSale ? "İndirimli" : "İndirimde Değil")</span></td>
+                    </tr>
+                }
+
+
+
+
+            </tbody>
+        </table>
+    </div>
+</div>

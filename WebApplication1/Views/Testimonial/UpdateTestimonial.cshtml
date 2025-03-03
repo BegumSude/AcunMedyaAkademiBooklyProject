@@ -1,0 +1,24 @@
+﻿@model BooklyProjectNew.Entities.Testimonial
+@{
+    ViewBag.Title = "UpdateCategory";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h3>Müşteri Yorumu Güncelle</h3>
+
+<form method="post">
+    <input type="hidden" name="@Model.TestimonialId" />
+    <label>İsim</label>
+    <input type="text" name="Name" value="@Model.Name" class="form-control" required />
+    <br />
+    <label>Yorum</label>
+    <input type="text" name="Comment" value="@Model.Comment" class="form-control" required />
+    <br />
+    <label>Puan</label>
+    <input type="number" name="Review" value="@Model.Review" class="form-control" required />
+    <br />
+    <button class="btn btn-outline-dark"><i class="fa fa-pen"></i> Güncelle</button>
+</form>
+
+
+

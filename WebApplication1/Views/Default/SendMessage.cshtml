@@ -1,0 +1,42 @@
+﻿
+<section id="message" style="background-image: url('/Templates/Bookly/images/banner-image-bg.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 50px 0;">
+    <div class="container">
+        <div class="text-center mb-4">
+            <h3>Bizimle İletişime Geçin</h3>
+            <br />
+        </div>
+
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-6 text-center">
+                <form action="/Default/SendMessage" method="post">
+                    <input type="text" class="form-control" name="Name" placeholder="Adınız ve Soyadınız" required />
+                    <br />
+                    <input type="text" class="form-control" name="Email" placeholder="E-Mail Adresiniz" required />
+                    <br />
+                    <input type="text" class="form-control" name="Subject" placeholder="Konu" required />
+                    <br />
+                    <textarea name="MessageContent" class="form-control" rows="5" placeholder="Mesajınızı Yazın..."></textarea>
+                    <br />
+                    <button onclick="sendMessage()" class="btn btn-danger" type="submit">Mesajı Gönder</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+
+    function sendMessage() {
+
+        Swal.fire({
+            title: "Tebrikler!",
+            text: "Mesajınız başarıyla gönderildi!",
+            icon: "https://e7.pngegg.com/pngimages/332/648/png-clipart-emoji-pop-heart-symbol-google-hangouts-emoji-love-purple.png",
+            confirmButtonText:"Tamam"
+        });
+
+    }
+
+
+</script>

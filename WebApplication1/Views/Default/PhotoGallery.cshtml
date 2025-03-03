@@ -1,0 +1,32 @@
+﻿@model List<BooklyProjectNew.Entities.PhotoGallery>
+
+<section id="photogallery">
+    <div class="container">
+        <div class="text-center mb-4">
+            <h3>Fotoğraf Galerisi</h3>
+            <br />
+        </div>
+        <div class="row">
+
+            @foreach (var item in Model)
+            {
+                <div class="col-md-2">
+                    <figure class="instagram-item position-relative rounded-3">
+                        <a href="https://templatesjungle.com/" class="image-link position-relative">
+                            <div class="icon-overlay position-absolute d-flex justify-content-center">
+                                <svg class="instagram">
+                                    <use xlink:href="#instagram"></use>
+                                </svg>
+                            </div>
+                            <img src="@item.ImageUrl" alt="instagram" class="img-fluid rounded-3 insta-image">
+                        </a>
+                    </figure>
+                </div>
+            }
+
+
+
+
+        </div>
+    </div>
+</section>

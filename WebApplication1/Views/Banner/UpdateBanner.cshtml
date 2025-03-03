@@ -1,0 +1,22 @@
+﻿@model BooklyProjectNew.Entities.Banner
+@{
+    ViewBag.Title = "UpdateBanner";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h3>Öne Çıkan Kitap Güncelleme </h3>
+
+<form method="post">
+    <input type="hidden" name="@Model.BannerId" />
+    <label>Kitap İsmi</label>
+    <input type="text" name="Title" value="@Model.Title" class="form-control" required />
+    <br />
+    <label>Tanım</label>
+    <input type="text" name="Description" value="@Model.Description" class="form-control" required />
+    <br />
+    <label>Görsel Url</label>
+    <input type="text" name="ImageUrl" value="@Model.ImageUrl" class="form-control" required />
+    <br />
+
+</form>
+

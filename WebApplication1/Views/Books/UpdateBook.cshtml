@@ -1,0 +1,24 @@
+﻿@model BooklyProjectNew.Entities.Book
+@{
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h3>Kitap Güncelleme Sayfası</h3>
+
+<form method="post">
+    <input type="hidden" name="@Model.BookId"/>
+    <label>Kapak Resmi</label>
+    <input type="text" name="CoverImageUrl" value="@Model.CoverImageUrl" class="form-control" required />
+    <br />
+    <label>Kitap Adı</label>
+    <input type="text" name="BookName" value="@Model.BookName" class="form-control" required />
+    <br />
+    <label>Yazar Adı</label>
+    <input type="text" name="Author" value="@Model.Author.Name" class="form-control" required />
+    <br />
+    <label>Fiyat</label>
+    <input type="text" name="Price" value="@Model.Price" class="form-control" required />
+    <br />
+    <button class="btn btn-outline-dark"><i class="fa fa-save"></i> Kaydet</button>
+</form>
+

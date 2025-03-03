@@ -1,0 +1,21 @@
+﻿@model BooklyProjectNew.Entities.Category
+@{
+    ViewBag.Title = "UpdateCategory";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h3>Kategori Güncelle</h3>
+
+<form method="post">
+    <input type="hidden" name="@Model.CategoryId" />
+    <label>Kategori Adı</label>
+    <input type="text" name="CategoryName" value="@Model.CategoryName" class="form-control" required />
+    <br />
+    <label>Görsel Url</label>
+    <input type="text" name="ImageUrl" value="@Model.ImageUrl" class="form-control" required />
+    <br />
+    <button class="btn btn-outline-dark"><i class="fa fa-pen"></i> Güncelle</button>
+</form>
+
+
+

@@ -1,0 +1,47 @@
+﻿@model List<BooklyProjectNew.Entities.Banner>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<h3>Öne Çıkan Kitaplar</h3>
+
+
+<table class="table table-bordered tabl">
+    <tr>
+        <th>#</th>
+        <th>Başlık</th>
+        <th>Tanım</th>
+        <th>Görsel Url</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+    <tr>
+        <th>@count</th>
+        <td>@item.Title</td>
+        <td>@item.Description</td>
+        <td><img src="@item.ImageUrl" style="width:75px ; height:75px" , alt="Kitap Görseli" /></td>
+        <td><a href="/Banner/DeleteBanner/@item.BannerId" class="btn btn-outline-dark" style="color:#AB2087"><i class="fa fa-trash"></i>Sil</a></td>
+        <td><a href="/Banner/UpdateBanner/@item.BannerId" class="btn btn-outline-dark" style="color:#AB2087"><i class="fa fa-pen"></i>Güncelle</a></td>
+    </tr>
+    }
+    <br>
+    <table>
+        <br />
+        <td><a href="/Banner/AddBanner/" class="btn btn-outline-dark">Yeni Öne Çıkan Kitap Ekle</a></td>
+    </table>
+
+
+
+
+</table>
+
+
+
+
+

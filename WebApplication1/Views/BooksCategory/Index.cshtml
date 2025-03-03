@@ -1,0 +1,42 @@
+﻿@model List<BooklyProjectNew.Entities.BookCategories>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<h3>Kitap Kategorileri</h3>
+
+<table class="table table-bordered tabl">
+    <tr>
+        <th>#</th>
+        <th>Kitap Adı</th>
+        <th>Kitap Görseli</th>
+        <th>Kategori Adı</th>
+        <th>Kategori Görseli</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+
+    @foreach(var item in Model)
+    {
+        count++;
+    <tr>
+        <td>@count</td>
+        <td>@item.Book.BookName</td>
+        <td><img src="@item.Book.CoverImageUrl" style="width:70px;height:70px" alt="Kitap Görseli" /></td>
+        <td>@item.Category.CategoryName</td>
+        <td><img src="@item.Category.ImageUrl" style="width:70px;height:70px" alt="Kategori Görseli" /></td>
+        <td><a href="BookCategory/DeleteBookCategory/@item.BookCategoryId" class="btn btn-outline-dark" style="color:#AB2087"><i class="fa fa-trash"></i>Sil</a></td>
+        <td><a href="BookCategory/UpdateBookCategory/@item.BookCategoryId" class="btn btn-outline-dark" style="color:#AB2087"><i class="fa fa-pen"></i>Güncelle</a></td>
+    </tr>
+    }
+
+    <table>
+        <br />
+        <td><a href="/BooksCategory/AddBookCategory/" class="btn btn-outline-dark">Yeni Kitap Kategorisi Ekle</a></td>
+    </table>
+
+
+</table>
+

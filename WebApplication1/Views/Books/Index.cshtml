@@ -1,0 +1,53 @@
+﻿@model List<BooklyProjectNew.Entities.Book>
+@{
+    ViewBag.Title = "Index";
+    int count = 0;
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h3>Kitaplar</h3>
+
+<form method="get">
+    <div class="form-group">
+
+        <input type="text" name="searchText" placeholder="Aranacak Kelime" />
+        <button class="btn btn-dark btn-sm">Ara</button>
+    </div>
+</form>
+
+<table class="table table-bordered tabl">
+    <tr>
+        <th>#</th>
+        <th>Kapak Resmi</th>
+        <th>Kitap Adı</th>
+        <th>Yazar</th>
+        <th>Fiyat</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td><img src="@item.CoverImageUrl" style="width:75px ; height:75px" , alt="Kitap Kapağı" /></td>
+            <td>@item.BookName</td>
+            <td>@item.Author.Name @item.Author.Surname</td>
+            <td>@item.Price</td>
+
+
+            <td><a href="/Books/DeleteBook/@item.BookId" class="btn btn-outline-dark" style="color:#AB2087"><i class="fa fa-trash"></i>Sil</a></td>
+            <td><a href="/Books/UpdateBook/@item.BookId" class="btn btn-outline-dark" style="color:#AB2087"><i class="fa fa-pen"></i>Güncelle</a></td>
+        </tr>
+    }
+
+    <table>
+        <br />
+        <td><a href="/Books/AddBook/" class="btn btn-outline-dark">Yeni Kitap Ekle</a></td>
+    </table>
+
+
+
+
+</table>
